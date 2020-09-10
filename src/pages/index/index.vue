@@ -8,6 +8,7 @@
 </template>
 
 <script>
+	import { getExample, postExample } from '../../api/index'
 	export default {
 		data() {
 			return {
@@ -18,7 +19,15 @@
 
 		},
 		methods: {
-
+			async getTest() {
+				let res = await getExample()
+			},
+			async postTest() {
+				let res = await postExample({
+					data: 1,
+					bbb: 2
+				})
+			}
 		}
 	}
 </script>
